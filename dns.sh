@@ -24,7 +24,7 @@ cp -av /root/cdpni/intranet/init.d/named /etc/init.d
 cp -v /root/intranet/apparmor.d/usr.sbin.named /etc/apparmor.d/	
 cp -av /usr/share/dns/root.hints /var/bind9/chroot/var/cache/bind
 cp -v /root/cdpni/intranet/bind_chroot/etc/bind/named.conf* /etc/bind
-cp -v /root/cdpni/intranet/bind_chroot/bind/* /var/bind9/chroot/var/cache/bind
+cp -v /root/cdpni/intranet/bind_chroot/etc/bind/* /var/bind9/chroot/var/cache/bind
 	chgrp bind /var/bind9/chroot/var/{cache/bind,run/named}
 systemctl restart apparmor named
 systemctl status named apparmor
