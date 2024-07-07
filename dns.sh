@@ -4,9 +4,9 @@ apt update
 hostnamectl set-hostname intranet.cdpni.gov
 apt install bind9 bind9utils dnsutils -y
 cp -v /root/cdpni/intranet/etc/* /etc
+	chattr +i /etc/resolv.conf
 cp -v /root/cdpni/intranet/network/interfaces /etc/network/
 cp -v /root/cdpni/intranet/ssh/sshd_config /etc/ssh/
-	chattr +i /etc/resolv.conf
 systemctl restart sshd	
 systemctl stop named
 systemctl stop apparmor
